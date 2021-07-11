@@ -1,0 +1,8 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: test
+data:
+  apiVersion: {{ .Capabilities.APIVersions }}
+  kubeVersion: {{ .Capabilities.KubeVersion }}
+  
