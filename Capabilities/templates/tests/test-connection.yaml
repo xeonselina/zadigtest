@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "Capabilities.fullname" . }}-test-connection"
+  name: "test-connection"
   labels:
 {{ include "Capabilities.labels" . | nindent 4 }}
   annotations:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['{{ include "Capabilities.fullname" . }}:{{ .Values.service.port }}']
+      args:  ['{{ .Values.service.port }}']
   restartPolicy: Never
